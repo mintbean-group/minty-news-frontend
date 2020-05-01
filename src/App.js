@@ -1,26 +1,43 @@
-import React from 'react';
+import React, {Component} from 'react';
+import axios from 'axios';
+import Header from './Header';
+import Articles from './Articles';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor(){
+    super();
+
+    this.state = {
+      isLoggedIn: false,
+      articles: [],
+    }
+
+
+  }
+
+  // CONNECT WITH OUR API
+  // componentDidMount(){
+  //   axios({
+  //     url: ,
+  //     method: 'GET',
+  //     responseType: 'json',
+  //   })
+  //   .then((response) => {
+
+  //   })
+  // }
+
+  render(){
+    return (
+      <div>
+        <Header />
+        <Articles articleData = {this.state.articles}/>
+      </div>
+    );
+  }
 }
 
 export default App;
