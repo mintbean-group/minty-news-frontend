@@ -9,19 +9,23 @@ class Articles extends Component{
 
     render(){
         return(
-            <div>
-                {this.props.articleData.map((article)=>{
-                    return(
-                        <div>
-                            <button>Like</button>
-                            <h2><a href={article.url}>{article.title}</a></h2>
-                            <p>{article.description}</p>
-                            <p>{article.likes}</p>
-                            <p>{article.date}</p>
-                        </div>
-                    )
-                })}
-            </div>
+            <main>
+                <div className="wrapper">
+                    <ul>
+                        {this.props.articleData.map((article)=>{
+                            return(
+                                <li key={article._id}>
+                                    <button>Like</button>
+                                    <h2><a href={article.url}>{article.title}</a></h2>
+                                    <p>{article.description}</p>
+                                    <p>{article.likes}</p>
+                                    <p>{article.date}</p>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+            </main>
         )
     }
 }
