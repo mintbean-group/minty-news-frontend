@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Header from './Header';
 import axios from 'axios';
 import Articles from './Articles';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -14,8 +13,19 @@ class App extends Component {
       isLoggedIn: false,
       articles: [],
     }
+  }
 
-
+  // make function to update articles
+  updateArticles = (article) => {
+    axios({
+      url: `https://t3minty-api.herokuapp.com/article/${article._id}`,
+      method: 'PUT',
+      responseType: 'json',
+      data: article,
+    })
+    .then((response) => {
+      this.getArticles();
+    })
   }
 
   // make function to recieve the articles data
@@ -41,7 +51,7 @@ class App extends Component {
     return (
       <div>
         <Header  loggedIn = {this.state.openLogin} getArticlesFunc = {this.getArticles}/>
-        <Articles getArticlesFunc = {this.getArticles} articleData = {this.state.articles}/>
+        <Articles updateArticlesFunc = {this.updateArticles} getArticlesFunc = {this.getArticles} articleData = {this.state.articles}/>
       </div>
     );
   }

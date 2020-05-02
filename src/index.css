@@ -37,6 +37,11 @@ a{
   text-decoration: none;
 }
 
+/* remove resize on the textarea */
+textarea{
+  resize: none;
+}
+
 /* add default button styles */
 button:hover,
 button:focus{
@@ -107,20 +112,21 @@ header button{
 }
 
 /* new post button */
-header .newPost button{
+header .newPostButton{
   border: none;
   padding: 10px;
   transition: all 0.5s ease;
 }
 
 /* hover effects */
-header .newPost button:hover,
-header .newPost button:focus{
+header .newPostButton:hover,
+header .newPostButton:focus{
   transform: scale(1.1);
 }
 
-/* login button */
-header .login button{
+/* button styles */
+header .loginButton,
+.moduleContent button.submit{
   padding: 10px 50px;
   border: 1px solid black;
   border-radius: 20px;
@@ -128,8 +134,10 @@ header .login button{
 }
 
 /* change background on hover */
-header .login button:hover,
-header .login button:focus{
+header .loginButton:hover,
+header .loginButton:focus,
+.moduleContent button.submit:hover,
+.moduleContent button.submit:focus{
   background-color: black;
   color: white;
 }
@@ -144,14 +152,66 @@ header .login button:focus{
   background-color: rgba(255, 255, 255, 0.609);
 }
 
-
+/* module content styles */
 .moduleContent{
   position: relative;
-  top: 20%;
+  top: 15%;
   left: 0;
+  border-radius: 20px;
+  width: 600px;
   margin: 0 auto;
-  box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.75);
-  width: 500px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.171);
+  padding: 40px 50px;
   background-color: #fff;
-  height: 500px;
 }
+
+/* h3 styles */
+.moduleContent h3{
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: rgb(23, 207, 152);
+}
+
+/* label styles */
+.moduleContent label{
+  margin: 5px 0;
+}
+
+/* input styles */
+.moduleContent input{
+  margin-bottom: 10px;
+  height: 35px;
+  border: 0.5px solid rgb(107, 107, 107);
+}
+
+/* text area styles */
+.moduleContent textarea{
+  border: 0.5px solid rgb(107, 107, 107);
+  height: 150px;
+}
+
+/* add spaces to create room for typed text */
+.moduleContent input, 
+textarea{
+  padding: 10px;
+}
+
+/* add focus styles */
+.moduleContent input:focus, 
+textarea:focus{
+  border-color: rgb(16, 190, 138);
+}
+
+/* styles for the submit buttons in modules */
+.moduleContent button.submit{
+  align-self: center;
+  margin-top: 30px;
+}
+
+/* new post form styles */
+.moduleContent form{
+  display: flex;
+  flex-direction: column;
+}
+
+

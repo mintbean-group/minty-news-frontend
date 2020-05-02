@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import logo from './logo.svg';
 import './App.css';
 
 class Header extends Component {
@@ -120,8 +119,8 @@ class Header extends Component {
                     <h1>Minty news</h1>
                     <nav>
                         <ul>
-                            <li className="newPost"><button onClick = {()=>this.handleOpenPost(true)}>+ New post</button></li>
-                            <li className="login"><button onClick = {()=>this.handleOpenLogin(true)}>Login</button></li>
+                            <li><button className="newPostButton" onClick = {()=>this.handleOpenPost(true)}>+ New post</button></li>
+                            <li><button className="loginButton" onClick = {()=>this.handleOpenLogin(true)}>Login</button></li>
                         </ul>
                     </nav>
                     {this.state.openNewPost ? <div className="newPost moduleContainer">
@@ -137,7 +136,7 @@ class Header extends Component {
                                 <label htmlFor="description">Description</label>
                                 <textarea name="description" id="description" cols="30" rows="10" onChange ={this.handleDesc}></textarea>
         
-                                <button type="submit">Post</button>
+                                <button type="submit" className="submit">Post</button>
                             </form>
                         </div>
                     </div> : null}
@@ -152,7 +151,7 @@ class Header extends Component {
                                 <label htmlFor="password">Password</label>
                                 <input type="password" name="password" id="password"/>
         
-                                <button type="submit">Log in</button>
+                                <button type="submit" className="submit">Login</button>
                             </form>
                         </div>
                     </div> : null}
