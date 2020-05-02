@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,9 +11,13 @@ class Header extends Component {
         this.state = {
             openLogin: false,
             openNewPost: false,
+            userTitle: '',
+            userUrl: '',
+            userDesc: '',
         }
     }
 
+    // LOGIN FUNCTIONS
 
     // on click, change the state in parent to true
     handleOpenLogin = (stateOfwindow) => {
@@ -45,11 +50,66 @@ class Header extends Component {
         })
     }
 
+    // NEW POST FUNCTIONS
+
+    // on change, grab the title
+    handleTitle = (e)=>{
+        this.setState({
+            userTitle: e.target.value,
+        })
+    }
+
+    // on change, grab the url
+    handleUrl = (e)=>{
+        this.setState({
+            userUrl: e.target.value,
+        })
+    }
+
+    // on change, grab the description
+    handleDesc = (e)=>{
+
+        this.setState({
+            userDesc: e.target.value,
+        })
+    }
+
     // on submit, post to the API and close the window
-    handlePost = ()=>{
+    handlePost = (e)=>{
+
+        // prevent default of the post
+        e.preventDefault();
+
+        // make variables 
+        const title = this.state.userTitle;
+        const url = this.state.userUrl;
+        const description = this.state.userDesc;
+        // const date = new Date();
+        const likes = 0;
+        const comments = [];
+
+        // post the data to the api an recieve updated data
+        axios({
+            url: 'https://t3minty-api.herokuapp.com/article',
+            method: 'POST',
+            responseType: 'json',
+            data: {
+                title,
+                url,
+                description,
+                likes,
+                comments,
+            }
+        })
+        .then((response) => {
+            this.props.getArticlesFunc();
+        })
+
+
 
         // call function to close the module window
         this.handleOpenPost(false);
+
 
     }
 
@@ -60,36 +120,41 @@ class Header extends Component {
                     <h1>Minty news</h1>
                     <nav>
                         <ul>
-                            <li className="newPost"><button onClick = {()=>this.handleOpenPost(true)}>New post</button></li>
+                            <li className="newPost"><button onClick = {()=>this.handleOpenPost(true)}>+ New post</button></li>
                             <li className="login"><button onClick = {()=>this.handleOpenLogin(true)}>Login</button></li>
                         </ul>
                     </nav>
-                    {this.state.openLogin ? <div className="newPost module">
-                        <form action="" onSubmit = {this.handlePost}>
-                            <label htmlFor="title">Please enter a title</label>
-                            <input type="text" name="title" id="title"/>
-    
-                            <label htmlFor="link">Please enter the link</label>
-                            <input type="text" name="link" id="link"/>
-    
-                            <label htmlFor="description">Please enter a short description</label>
-                            <textarea name="description" id="description" cols="30" rows="10"></textarea>
-    
-                            <button type="submit">Submit</button>
-                        </form>
+                    {this.state.openNewPost ? <div className="newPost moduleContainer">
+                        <div className="moduleContent">
+                            <h3>Make a new post</h3>
+                            <form action="" onSubmit = {this.handlePost}>
+                                <label htmlFor="title">Title</label>
+                                <input type="text" name="title" id="title" onChange ={this.handleTitle}/>
+        
+                                <label htmlFor="link">URL</label>
+                                <input type="text" name="link" id="link" onChange ={this.handleUrl}/>
+        
+                                <label htmlFor="description">Description</label>
+                                <textarea name="description" id="description" cols="30" rows="10" onChange ={this.handleDesc}></textarea>
+        
+                                <button type="submit">Post</button>
+                            </form>
+                        </div>
                     </div> : null}
                     
-                    {this.state.openNewPost ? <div className="logIn module">
-    
-                        <form action="" onSubmit = {this.handleLogin}>
-                            <label htmlFor="username">Username</label>
-                            <input type="text" name="username" id="username"/>
-    
-                            <label htmlFor="password">Password</label>
-                            <input type="password" name="password" id="password"/>
-    
-                            <button type="submit">Log in</button>
-                        </form>
+                    {this.state.openLogin ? <div className="login moduleContainer">
+                        <div className="moduleContent">
+                            <h3>Login</h3>
+                            <form action="" onSubmit = {this.handleLogin}>
+                                <label htmlFor="username">Username</label>
+                                <input type="text" name="username" id="username"/>
+        
+                                <label htmlFor="password">Password</label>
+                                <input type="password" name="password" id="password"/>
+        
+                                <button type="submit">Log in</button>
+                            </form>
+                        </div>
                     </div> : null}
                 </div>    
             </header>

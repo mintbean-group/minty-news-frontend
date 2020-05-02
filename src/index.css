@@ -60,6 +60,7 @@ body{
 /* heading styles */
 h1,
 h2,
+h3,
 button{
   font-family: 'Didact Gothic', sans-serif;
   letter-spacing: 0.1rem;
@@ -67,7 +68,7 @@ button{
 
 /* heading heirarchy */
 h1{
-  font-size: 3rem;
+  font-size: 2.4rem;
 }
 
 
@@ -75,7 +76,7 @@ h1{
 
 /* overall header styles */
 header{
-  background-color: lightblue;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(150, 240, 183) 0%, rgb(118, 236, 246) 100%);
   padding: 20px 0;
 }
 
@@ -106,8 +107,51 @@ header button{
 }
 
 /* new post button */
-header .newPost{
+header .newPost button{
   border: none;
-  
+  padding: 10px;
+  transition: all 0.5s ease;
 }
 
+/* hover effects */
+header .newPost button:hover,
+header .newPost button:focus{
+  transform: scale(1.1);
+}
+
+/* login button */
+header .login button{
+  padding: 10px 50px;
+  border: 1px solid black;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+/* change background on hover */
+header .login button:hover,
+header .login button:focus{
+  background-color: black;
+  color: white;
+}
+
+/* module styles */
+.moduleContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.609);
+}
+
+
+.moduleContent{
+  position: relative;
+  top: 20%;
+  left: 0;
+  margin: 0 auto;
+  box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.75);
+  width: 500px;
+  background-color: #fff;
+  height: 500px;
+}

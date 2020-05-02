@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 
+
+
 class Articles extends Component{
     constructor(){
         super();
 
 
+    }
+
+    componentDidMount(){
+        this.props.getArticlesFunc();
     }
 
     render(){
