@@ -17,9 +17,19 @@ class App extends Component {
     };
   }
 
-  componentDidMount = () =>  {
+  componentDidMount = () => {
     console.log("component mounted");
-  }
+    axios({
+      url: `${urlString}/check`,
+      method: "GET",
+      responseType: "json",
+    }).then((response) => {
+
+     console.log(response.data.status); 
+     console.log(response.data.user);
+
+    });
+  };
 
   // make function to update articles
   updateArticles = (article) => {
