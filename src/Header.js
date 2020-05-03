@@ -125,16 +125,17 @@ class Header extends Component {
                     </nav>
                     {this.state.openNewPost ? <div className="newPost moduleContainer">
                         <div className="moduleContent">
+                            <button className="exitNewPost" onClick={() => this.handleOpenPost(false)}>X</button>
                             <h3>Make a new post</h3>
                             <form action="" onSubmit = {this.handlePost}>
                                 <label htmlFor="title">Title</label>
-                                <input type="text" name="title" id="title" onChange ={this.handleTitle}/>
+                                <input type="text" name="title" id="title" onChange ={this.handleTitle} required/>
         
                                 <label htmlFor="link">URL</label>
-                                <input type="text" name="link" id="link" onChange ={this.handleUrl}/>
+                                <input type="text" name="link" id="link" onChange ={this.handleUrl} required/>
         
                                 <label htmlFor="description">Description</label>
-                                <textarea name="description" id="description" cols="30" rows="10" onChange ={this.handleDesc}></textarea>
+                                <textarea name="description" id="description" cols="30" rows="10" onChange ={this.handleDesc} required></textarea>
         
                                 <button type="submit" className="submit">Post</button>
                             </form>
