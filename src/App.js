@@ -4,16 +4,19 @@ import axios from "axios";
 import Articles from "./Articles";
 import "./App.css";
 
-const urlString = "";
+const urlString = "https://t3minty-api.herokuapp.com";
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: true,
       articles: [],
-      user: {},
+      user: {
+        name: 'Kay',
+        picture: 'https://lh3.googleusercontent.com/a-/AOh14GinaUIVVR9aQc6qz8Mg1Sl7wFeDMnJTzBzDDrtLjg'
+      },
     };
   }
 
@@ -76,6 +79,7 @@ class App extends Component {
         <Header
           loggedIn={this.state.isLoggedIn}
           getArticlesFunc={this.getArticles}
+          userObject={this.state.user}
         />
         <Articles
           updateArticlesFunc={this.updateArticles}
