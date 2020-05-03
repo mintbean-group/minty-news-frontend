@@ -36,7 +36,9 @@ class App extends Component {
         responseType: 'json',
     })
     .then((response) => {
+
         const articleResponse = response.data;
+        console.log(articleResponse);
 
       // set state to the response from the API
         this.setState({
