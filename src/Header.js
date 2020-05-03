@@ -142,8 +142,8 @@ class Header extends Component {
                                 <label htmlFor="title">Title</label>
                                 <input type="text" name="title" id="title" onChange ={this.handleTitle} required/>
         
-                                <label htmlFor="link">URL</label>
-                                <input type="text" name="link" id="link" onChange ={this.handleUrl} required/>
+                                <label htmlFor="link">URL (start with https://)</label>
+                                <input type="text" name="link" id="link" onChange={this.handleUrl} required pattern="https?://.+"  placeholder="eg. https://google.com"/>
         
                                 <label htmlFor="description">Description</label>
                                 <textarea name="description" id="description" cols="30" rows="10" onChange ={this.handleDesc} required></textarea>
