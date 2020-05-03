@@ -128,8 +128,11 @@ class Header extends Component {
                         <ul>
                             <li><button className="newPostButton" onClick = {()=>this.handleOpenPost(true)}>+ New post</button></li>
                             {this.props.loggedIn ? 
-                            <div>
-                                <li><button className="profileButton" onClick = {()=>this.handleOpenProfile(true)}>Profile</button></li>
+                            <div className="signIn">
+                                <div className="profile">
+                                    <img src={this.props.userObject.picture} alt={this.props.userObject.name} />
+                                    <p>Hello, {this.props.userObject.name}</p>
+                                </div>
                                 <li><button className="loginButton">Sign out</button></li> 
                             </div> : 
                             <li><button className="loginButton" onClick = {()=>this.handleOpenLogin(true)}>Login</button></li>

@@ -11,9 +11,12 @@ class App extends Component {
     super();
 
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: true,
       articles: [],
-      user: {},
+      user: {
+        name: 'Kay',
+        picture: 'https://lh3.googleusercontent.com/a-/AOh14GinaUIVVR9aQc6qz8Mg1Sl7wFeDMnJTzBzDDrtLjg'
+      },
     };
   }
 
