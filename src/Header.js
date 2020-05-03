@@ -121,61 +121,131 @@ class Header extends Component {
 
     render(){
         return (
-            <header>
-                <div className="wrapper">
-                    <h1>Minty news</h1>
-                    <nav>
-                        <ul>
-                            <li><button className="newPostButton" onClick = {()=>this.handleOpenPost(true)}>+ New post</button></li>
-                            {this.props.loggedIn ? 
-                            <div>
-                                <li><button className="profileButton" onClick = {()=>this.handleOpenProfile(true)}>Profile</button></li>
-                                <li><button className="loginButton">Sign out</button></li> 
-                            </div> : 
-                            <li><button className="loginButton" onClick = {()=>this.handleOpenLogin(true)}>Login</button></li>
+          <header>
+            <div className="wrapper">
+              <h1>Minty news</h1>
+              <nav>
+                <ul>
+                  <li>
+                    <button
+                      className="newPostButton"
+                      onClick={() => this.handleOpenPost(true)}
+                    >
+                      + New post
+                    </button>
+                  </li>
+                  {this.props.loggedIn ? (
+                    <div>
+                      <li>
+                        <button
+                          className="profileButton"
+                          onClick={() => this.handleOpenProfile(true)}
+                        >
+                          Profile
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          className="loginButton"
+                          onClick={() =>
+                            (window.location = window.location =
+                              "https://t4minty.herokuapp.com/v2/logout")
                             }
-                        </ul>
-                    </nav>
-                    {this.state.openNewPost ? <div className="newPost moduleContainer">
-                        <div className="moduleContent">
-                        <button onClick={()=>this.handleOpenPost(false)} className="closeModule">
-                                <FontAwesomeIcon icon={faTimes} />
-                            </button>
-                            <h3>Make a new post</h3>
-                            <form action="" onSubmit = {this.handlePost}>
-                                <label htmlFor="title">Title</label>
-                                <input type="text" name="title" id="title" onChange ={this.handleTitle} required/>
-        
-                                <label htmlFor="link">URL (start with https://)</label>
-                                <input type="text" name="link" id="link" onChange={this.handleUrl} required pattern="https?://.+"  placeholder="eg. https://google.com"/>
-        
-                                <label htmlFor="description">Description</label>
-                                <textarea name="description" id="description" cols="30" rows="10" onChange ={this.handleDesc} required></textarea>
-        
-                                <button type="submit" className="submit">Post</button>
-                            </form>
-                        </div>
-                    </div> : null}
-                    
-                    {this.state.openLogin ? <div className="login moduleContainer">
-                        <div className="moduleContent">
-                            <button onClick={()=>this.handleOpenLogin(false)} className="closeModule">
-                                <FontAwesomeIcon icon={faTimes} />
-                            </button>
-                            <h3>Login</h3>
-                            <form action="" onSubmit = {this.handleLogin}>
-                                <label htmlFor="username">Username</label>
-                                <input type="text" name="username" id="username"/>
-        
-                                <label htmlFor="password">Password</label>
-                                <input type="password" name="password" id="password"/>
-        
-                                <button type="submit" className="submit">Login</button>
-                            </form>
-                        </div>
-                    </div> : null}
-                </div>    
-            </header>
+                        >
+                          Sign out
+                        </button>
+                      </li>
+                    </div>
+                  ) : (
+                    <li>
+                      <button
+                        className="loginButton"
+                        onClick={() =>
+                          (window.location =
+                            "https://t4minty.herokuapp.com/login")
+                        }
+                      >
+                        Login
+                      </button>
+                    </li>
+                  )}
+                </ul>
+              </nav>
+              {this.state.openNewPost ? (
+                <div className="newPost moduleContainer">
+                  <div className="moduleContent">
+                    <button
+                      onClick={() => this.handleOpenPost(false)}
+                      className="closeModule"
+                    >
+                      <FontAwesomeIcon icon={faTimes} />
+                    </button>
+                    <h3>Make a new post</h3>
+                    <form action="" onSubmit={this.handlePost}>
+                      <label htmlFor="title">Title</label>
+                      <input
+                        type="text"
+                        name="title"
+                        id="title"
+                        onChange={this.handleTitle}
+                        required
+                      />
+
+                      <label htmlFor="link">URL (start with https://)</label>
+                      <input
+                        type="text"
+                        name="link"
+                        id="link"
+                        onChange={this.handleUrl}
+                        required
+                        pattern="https?://.+"
+                        placeholder="eg. https://google.com"
+                      />
+
+                      <label htmlFor="description">Description</label>
+                      <textarea
+                        name="description"
+                        id="description"
+                        cols="30"
+                        rows="10"
+                        onChange={this.handleDesc}
+                        required
+                      ></textarea>
+
+                      <button type="submit" className="submit">
+                        Post
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              ) : null}
+
+              {this.state.openLogin ? (
+                <div className="login moduleContainer">
+                  <div className="moduleContent">
+                    <button
+                      onClick={() => this.handleOpenLogin(false)}
+                      className="closeModule"
+                    >
+                      <FontAwesomeIcon icon={faTimes} />
+                    </button>
+                    <h3>Login</h3>
+                    <form action="" onSubmit={this.handleLogin}>
+                      <label htmlFor="username">Username</label>
+                      <input type="text" name="username" id="username" />
+
+                      <label htmlFor="password">Password</label>
+                      <input type="password" name="password" id="password" />
+
+                      <button type="submit" className="submit">
+                        Login
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </header>
         );
     }
 }
