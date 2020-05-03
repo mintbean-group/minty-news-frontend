@@ -67,7 +67,8 @@ h1,
 h2,
 h3,
 button,
-.profile p{
+.profile p,
+.linkHeading p a{
   font-family: 'Didact Gothic', sans-serif;
   letter-spacing: 0.1rem;
 }
@@ -316,6 +317,7 @@ main{
   background-color: transparent;
 }
 
+/* like button when clicked */
 .likesSection button.liked{
   color: rgb(16, 190, 138);
 }
@@ -331,12 +333,31 @@ main{
   position: relative;
 }
 
+/* article info headings styles */
+.articleInfo .linkHeading{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* external link */
+.linkHeading p a{
+  font-size: 1.4rem;
+  color: rgb(168, 168, 168);
+}
+
+/* hover and focus styles */
+.linkHeading p a:hover,
+.linkHeading p a:focus{
+  text-decoration: underline;
+}
+
 /* article info styles */
 .articleInfo h2{
   color: rgb(16, 190, 138);
   text-transform: capitalize;
-  font-size: 2rem;
-  
+  font-size: 2rem; 
+  margin-right: 10px;
 }
 
 /* addspacing for description */
