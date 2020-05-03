@@ -4,6 +4,8 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
+const urlString = "https://t3minty-api.herokuapp.com";
+
 class Header extends Component {
 
     constructor(){
@@ -91,20 +93,19 @@ class Header extends Component {
 
         // post the data to the api an recieve updated data
         axios({
-            url: 'https://t3minty-api.herokuapp.com/article',
-            method: 'POST',
-            responseType: 'json',
-            data: {
-                title,
-                url,
-                description,
-                likes,
-                comments,
-            }
-        })
-        .then((response) => {
-            this.props.getArticlesFunc();
-        })
+          url: `${urlString}/article`,
+          method: "POST",
+          responseType: "json",
+          data: {
+            title,
+            url,
+            description,
+            likes,
+            comments,
+          },
+        }).then((response) => {
+          this.props.getArticlesFunc();
+        });
 
 
 

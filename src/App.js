@@ -4,6 +4,8 @@ import axios from 'axios';
 import Articles from './Articles';
 import './App.css';
 
+const urlString = "https://t3minty-api.herokuapp.com";
+
 class App extends Component {
 
   constructor(){
@@ -18,33 +20,30 @@ class App extends Component {
   // make function to update articles
   updateArticles = (article) => {
     axios({
-      url: `https://t3minty-api.herokuapp.com/article/${article._id}`,
-      method: 'PUT',
-      responseType: 'json',
+      url: `${urlString}/article/${article._id}`,
+      method: "PUT",
+      responseType: "json",
       data: article,
-    })
-    .then((response) => {
+    }).then((response) => {
       this.getArticles();
-    })
+    });
   }
 
   // make function to recieve the articles data
   getArticles = () => {
     axios({
-        url: 'https://t3minty-api.herokuapp.com/articles',
-        method: 'GET',
-        responseType: 'json',
-    })
-    .then((response) => {
-
-        const articleResponse = response.data;
-        console.log(articleResponse);
+      url: `${urlString}/articles`,
+      method: "GET",
+      responseType: "json",
+    }).then((response) => {
+      const articleResponse = response.data;
+      console.log(articleResponse);
 
       // set state to the response from the API
-        this.setState({
+      this.setState({
         articles: articleResponse,
-        })
-    })
+      });
+    });
   }
 
 
