@@ -154,8 +154,7 @@ class Header extends Component {
                         <button
                           className="loginButton"
                           onClick={() =>
-                            (window.location = window.location =
-                              "https://dev-rk3u8fpc.auth0.com/v2/logout?federated")
+                            (window.location = "https://dev-rk3u8fpc.auth0.com/v2/logout?returnTo=https://t4minty.herokuapp.com")
                           }
                         >
                           Sign out
