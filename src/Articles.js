@@ -68,9 +68,6 @@ class Articles extends Component{
             // update the api
             this.props.updateArticlesFunc(article);
 
-            this.setState({
-                userComment: '',
-            })
         })
         
 
