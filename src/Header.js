@@ -72,6 +72,12 @@ class Header extends Component {
     });
   };
 
+  // on lgout, redirects to Auth0 logout route
+  handleLogout = () => {
+    window.location =
+      "https://dev-rk3u8fpc.auth0.com/v2/logout?federated?returnTo=https://t4minty.herokuapp.com";
+  };
+
   // on submit, post to the API and close the window
   handlePost = (e) => {
     // prevent default of the post
@@ -111,11 +117,6 @@ class Header extends Component {
     this.handleOpenPost(false);
   };
 
-  handleLogout = () => {
-    window.location =
-      "https://dev-rk3u8fpc.auth0.com/v2/logout?federated?returnTo=https://t4minty.herokuapp.com";
-  };
-
   render() {
     return (
       <header>
@@ -149,10 +150,7 @@ class Header extends Component {
                   </div>
 
                   <li>
-                    <button
-                      className="loginButton"
-                      onClick={() => this.handleLogOut()}
-                    >
+                    <button className="loginButton" onClick={this.handleLogout}>
                       Sign out
                     </button>
                   </li>
