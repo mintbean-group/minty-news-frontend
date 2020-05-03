@@ -3,7 +3,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp, faUserCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 
-const urlString = "";
+const urlString = "https://t3minty-api.herokuapp.com/";
 
 class Articles extends Component{
     constructor(){

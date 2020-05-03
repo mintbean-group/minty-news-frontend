@@ -4,7 +4,7 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const urlString = "";
+const urlString = "https://t3minty-api.herokuapp.com/";
 
 class Header extends Component {
 
