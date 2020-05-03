@@ -122,7 +122,13 @@ class Header extends Component {
                     <nav>
                         <ul>
                             <li><button className="newPostButton" onClick = {()=>this.handleOpenPost(true)}>+ New post</button></li>
+                            {this.props.loggedIn ? 
+                            <div>
+                                <li><button className="profileButton" onClick = {()=>this.handleOpenProfile(true)}>Profile</button></li>
+                                <li><button className="loginButton">Sign out</button></li> 
+                            </div> : 
                             <li><button className="loginButton" onClick = {()=>this.handleOpenLogin(true)}>Login</button></li>
+                            }
                         </ul>
                     </nav>
                     {this.state.openNewPost ? <div className="newPost moduleContainer">

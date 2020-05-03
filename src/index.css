@@ -147,6 +147,7 @@ header .loginButton:focus,
 /* module styles */
 .moduleContainer{
   position: fixed;
+  z-index: 800;
   top: 0;
   left: 0;
   right: 0;
@@ -165,6 +166,7 @@ header .loginButton:focus,
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.171);
   padding: 50px 50px 40px;
   background-color: #fff;
+  z-index: 9999;
 }
 
 /* close icon */
@@ -251,6 +253,10 @@ textarea:focus,
 
 
 /*      ARTICLES  */
+main{
+  z-index: 1;
+  position: relative;
+}
 
 
 /* basic article styles */
@@ -261,6 +267,7 @@ textarea:focus,
   display: flex;
   flex-direction: row;
   align-items: center;
+  z-index: 1;
 }
 
 /* no border on last one */

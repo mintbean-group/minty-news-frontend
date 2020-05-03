@@ -10,7 +10,6 @@ class Articles extends Component{
 
         this.state = {
             userComment: '',
-            isLiked: false,
         }
     }
 
@@ -53,6 +52,8 @@ class Articles extends Component{
             comment: this.state.userComment,
         }
 
+        document.getElementById('newComment').value = '';
+
         axios({
             url: `https://t3minty-api.herokuapp.com/comment`,
             method: 'POST',
@@ -77,7 +78,6 @@ class Articles extends Component{
     // make function that handles the likes
     handleLikes = (e, id)=>{
 
-        const newState = !this.state.isLiked;
 
         // make variable for the button being selected
         const button = e.currentTarget;
@@ -85,30 +85,30 @@ class Articles extends Component{
         // only add class for those that are liked
         button.classList.toggle('liked');
 
-        this.setState({
-            isLiked: newState,
-        }, ()=>{
-            if(this.state.isLiked){
+        console.log(button.classList);
 
-                // call function to grab the specific article
-                const article = this.handleGetArticle(id);
         
-                // increase the likes by one
-                article.likes++;
-        
-                // update the api
-                this.props.updateArticlesFunc(article);
-            } else if(this.state.isLiked === false){
-                // call function to grab the specific article
-                const article = this.handleGetArticle(id);
-        
-                // increase the likes by one
-                article.likes--;
-        
-                // update the api
-                this.props.updateArticlesFunc(article);
-            }
-        })
+        if(button.classList.length === 1){
+
+            // call function to grab the specific article
+            const article = this.handleGetArticle(id);
+    
+            // increase the likes by one
+            article.likes++;
+    
+            // update the api
+            this.props.updateArticlesFunc(article);
+
+        } else if(button.classList.length === 0){
+            // call function to grab the specific article
+            const article = this.handleGetArticle(id);
+    
+            // increase the likes by one
+            article.likes--;
+    
+            // update the api
+            this.props.updateArticlesFunc(article);
+        }
 
 
     }
@@ -143,7 +143,9 @@ class Articles extends Component{
                                                 {article.comments.map((comment)=>{
                                                     return(
                                                         <li key={comment._id} className="comment">
+                                                            {this.props.userObject.picture ? <img src={this.props.userObject.picture} alt={this.props.userObject.name}/> : 
                                                             <FontAwesomeIcon icon={faUserCircle} />
+                                                            }
                                                             <p>{comment.comment}</p>
                                                         </li>
                                                     )

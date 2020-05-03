@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       isLoggedIn: false,
       articles: [],
+      user: {},
     }
   }
 
@@ -52,8 +53,8 @@ class App extends Component {
   render(){
     return (
       <div>
-        <Header  loggedIn = {this.state.openLogin} getArticlesFunc = {this.getArticles}/>
-        <Articles updateArticlesFunc = {this.updateArticles} getArticlesFunc = {this.getArticles} articleData = {this.state.articles}/>
+        <Header  loggedIn = {this.state.isLoggedIn} getArticlesFunc = {this.getArticles}/>
+        <Articles updateArticlesFunc = {this.updateArticles} getArticlesFunc = {this.getArticles} articleData = {this.state.articles} userObject = {this.state.user}/>
       </div>
     );
   }
