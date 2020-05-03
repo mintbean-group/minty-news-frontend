@@ -18,14 +18,11 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    console.log("component mounted");
     axios({
       url: `${urlString}/check`,
       method: "GET",
       responseType: "json",
     }).then((response) => {
-      console.log(response.data.status);
-      console.log(response.data.user);
       this.setState(
         {
           isLoggedIn: response.data.status,
@@ -62,8 +59,6 @@ class App extends Component {
       responseType: "json",
     }).then((response) => {
       const articleResponse = response.data;
-      console.log(articleResponse);
-
       // set state to the response from the API
       this.setState({
         articles: articleResponse,
