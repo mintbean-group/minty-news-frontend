@@ -67,7 +67,7 @@ class Articles extends Component{
             comment: this.state.userComment,
         }
 
-        document.getElementById('newComment').value = '';
+        document.getElementById(id).value = '';
 
         axios({
           url: `${urlString}/comment`,
