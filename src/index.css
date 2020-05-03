@@ -234,6 +234,21 @@ textarea:focus,
   flex-direction: column;
 }
 
+.moduleContent .exitNewPost {
+  border: none;
+  font-weight: bold;
+  font-size: 4rem;
+  position: absolute;
+  right: 10%;
+  color: black;
+  transition: all 0.5s
+}
+
+.moduleContent .exitNewPost:hover,
+.moduleContent .exitNewPost:focus {
+  color:rgb(118, 236, 246);
+}
+
 
 /*      ARTICLES  */
 
