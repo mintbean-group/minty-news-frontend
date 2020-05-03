@@ -131,10 +131,9 @@ class Header extends Component {
                   className="newPostButton"
                   onClick={() =>
                     this.props.loggedIn
-                      ? (window.location =
-                          "https://t4minty.herokuapp.com/login")
-                      : this.handleOpenPost(true)
-                  }
+                      ? this.handleOpenPost(true)
+                      : (window.location =
+                          "https://t4minty.herokuapp.com/login")}
                 >
                   + New post
                 </button>
