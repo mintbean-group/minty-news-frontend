@@ -31,7 +31,6 @@ class Articles extends Component{
             // listen for click to close comments
             document.addEventListener('mousedown', (e) =>{
 
-                // console.log(e.target.classList);
                 if(!e.target.classList.contains('clickComment')){
                     commentSection.classList.remove('opened');
                 } 
@@ -101,8 +100,6 @@ class Articles extends Component{
         // only add class for those that are liked
         button.classList.toggle('liked');
 
-        console.log(button.classList);
-
         
         if(button.classList.length === 1){
 
@@ -152,7 +149,7 @@ class Articles extends Component{
 
     render(){
 
-        // console.log(this.props.articleData);
+
         return(
             <main>
                 <div className="wrapper">

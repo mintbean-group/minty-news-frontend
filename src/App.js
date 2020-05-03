@@ -26,6 +26,11 @@ class App extends Component {
       method: "GET",
       responseType: "json",
     }).then((response) => {
+
+      if (response.data.created) {
+        console.log(response.data.created);
+      }
+
       this.setState(
         {
           isLoggedIn: response.data.status,
