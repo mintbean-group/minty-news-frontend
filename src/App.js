@@ -4,7 +4,7 @@ import axios from 'axios';
 import Articles from './Articles';
 import './App.css';
 
-const urlString = "https://t3minty-api.herokuapp.com";
+const urlString = "";
 
 class App extends Component {
 
