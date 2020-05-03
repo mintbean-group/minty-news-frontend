@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class Header extends Component {
 
@@ -125,6 +127,9 @@ class Header extends Component {
                     </nav>
                     {this.state.openNewPost ? <div className="newPost moduleContainer">
                         <div className="moduleContent">
+                        <button onClick={()=>this.handleOpenPost(false)} className="closeModule">
+                                <FontAwesomeIcon icon={faTimes} />
+                            </button>
                             <h3>Make a new post</h3>
                             <form action="" onSubmit = {this.handlePost}>
                                 <label htmlFor="title">Title</label>
@@ -143,6 +148,9 @@ class Header extends Component {
                     
                     {this.state.openLogin ? <div className="login moduleContainer">
                         <div className="moduleContent">
+                            <button onClick={()=>this.handleOpenLogin(false)} className="closeModule">
+                                <FontAwesomeIcon icon={faTimes} />
+                            </button>
                             <h3>Login</h3>
                             <form action="" onSubmit = {this.handleLogin}>
                                 <label htmlFor="username">Username</label>

@@ -51,7 +51,7 @@ button:focus{
 /* wrapper styles */
 .wrapper{
   max-width: 1200px;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -137,9 +137,11 @@ header .loginButton,
 header .loginButton:hover,
 header .loginButton:focus,
 .moduleContent button.submit:hover,
-.moduleContent button.submit:focus{
+.moduleContent button.submit:focus,
+.newComment button:hover,
+.newComment button:focus{
   background-color: black;
-  color: white;
+  color: rgb(23, 207, 152);;
 }
 
 /* module styles */
@@ -161,8 +163,25 @@ header .loginButton:focus,
   width: 600px;
   margin: 0 auto;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.171);
-  padding: 40px 50px;
+  padding: 50px 50px 40px;
   background-color: #fff;
+}
+
+/* close icon */
+.closeModule{
+  position: absolute;
+  border: none;
+  top: 15px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: black;
+  transition: all 0.5s ease;
+}
+
+/* hover styles for close icon */
+.closeModule:hover,
+.closeModule:focus{
+  color: rgb(23, 207, 152);
 }
 
 /* h3 styles */
@@ -198,7 +217,8 @@ textarea{
 
 /* add focus styles */
 .moduleContent input:focus, 
-textarea:focus{
+textarea:focus,
+.newComment input:focus{
   border-color: rgb(16, 190, 138);
 }
 
@@ -213,5 +233,179 @@ textarea:focus{
   display: flex;
   flex-direction: column;
 }
+
+
+/*      ARTICLES  */
+
+
+/* basic article styles */
+.article{
+  margin: 10px 0;
+  padding: 10px 0 20px;
+  border-bottom: 0.5px solid rgb(16, 190, 138);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* no border on last one */
+.article:last-of-type{
+  border-bottom: none;
+}
+
+/* the likes styles */
+.likesSection{
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* the likes button */
+.likesSection button{
+  border: none;
+  font-size: 2rem;
+  padding: 5px;
+  background-color: transparent;
+}
+
+.likesSection button.liked{
+  color: rgb(16, 190, 138);
+}
+
+/* likes numbers */
+.likesSection p{
+  color: rgb(168, 168, 168);
+  font-size: 1.4rem;
+}
+
+/* make article info relative */
+.articleInfo{
+  position: relative;
+}
+
+/* article info styles */
+.articleInfo h2{
+  color: rgb(16, 190, 138);
+  text-transform: capitalize;
+  font-size: 2rem;
+  
+}
+
+/* addspacing for description */
+.articleInfo .description{
+  margin: 10px 0;
+  color: rgb(109, 109, 109);
+}
+
+/* show comments button */
+.articleInfo .showComments{
+  border: none;
+  background-color: transparent;
+  font-size: 1.4rem;
+  color: rgb(168, 168, 168);
+}
+
+/* show comments button */
+.articleInfo .showComments:hover,
+.articleInfo .showComments:focus{
+  text-decoration: underline;
+}
+
+/* comments styles */
+.comments{
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  width: 600px;
+  z-index: 10;
+  /* bottom: -350px; */
+  padding: 30px 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.171);
+  border-radius: 10px;
+}
+/* 
+.comments::before{
+  content:"";
+    position: absolute;
+    left: 10px;
+    top: -15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 20px 20px;
+    border-color: transparent transparent white transparent;
+    z-index:10;
+} */
+
+/* show the comments when opened */
+.comments.opened{
+  display: block;
+}
+
+/* comments styles */
+.comment{
+  display: flex;
+  width: 95%;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px 10px;
+  border-bottom: 0.5px solid rgb(202, 200, 200);
+}
+
+
+/* remove the bottom from the border */
+.comment:last-of-type{
+  border-bottom: none;
+}
+
+/* profile icon */
+.comment svg{
+  font-size: 2rem;
+  color: rgba(73, 214, 172, 0.548);
+  margin-right: 20px;
+}
+
+/* the new comment section */
+
+/* form styles */
+.newComment{
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* input styles */
+.newComment input{
+  height: 35px;
+  padding: 10px;
+  width: 90%;
+  border: 0.5px solid rgb(107, 107, 107);
+}
+
+/* add comment button */
+.newComment button{
+  border: none;
+  background-color: transparent;
+  width: 35px;
+  height: 35px;
+  border: 1px solid black;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+/* no comment p */
+.comments .noComment{
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+
+
+
 
 
