@@ -23,8 +23,10 @@ class App extends Component {
       method: "GET",
       responseType: "json",
     }).then((response) => {
+            console.log("component mounted");
+            console.log("user", response.data.user);
       this.setState(
-        {
+          {
           isLoggedIn: response.data.status,
         },
         () =>
