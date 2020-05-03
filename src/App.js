@@ -24,10 +24,16 @@ class App extends Component {
       method: "GET",
       responseType: "json",
     }).then((response) => {
+      console.log(response.data.status);
+      console.log(response.data.user);
 
-     console.log(response.data.status); 
-     console.log(response.data.user);
-
+      this.setState(
+        {
+          isLoggedIn: response.data.status,
+        },
+        () =>
+          response.data.user ? this.setState({ user: response.data.user }) : ""
+      );
     });
   };
 
