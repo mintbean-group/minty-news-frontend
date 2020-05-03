@@ -74,8 +74,9 @@ class Header extends Component {
 
   // on lgout, redirects to Auth0 logout route
   handleLogout = () => {
-    window.location =
-      "https://dev-rk3u8fpc.auth0.com/v2/logout?federated?returnTo=https://t4minty.herokuapp.com";
+    console.log("handleLogout called!")
+    // window.location =
+    //   "https://dev-rk3u8fpc.auth0.com/v2/logout?federated?returnTo=https://t4minty.herokuapp.com";
   };
 
   // on submit, post to the API and close the window
