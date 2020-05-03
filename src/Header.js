@@ -119,6 +119,10 @@ class Header extends Component {
 
     }
 
+    handleLogout = () => {
+        window.location = "https://dev-rk3u8fpc.auth0.com/v2/logout?federated?returnTo=https://t4minty.herokuapp.com";
+    }
+
     render(){
         return (
           <header>
@@ -153,10 +157,7 @@ class Header extends Component {
                       <li>
                         <button
                           className="loginButton"
-                          onClick={() =>
-                            (window.location =
-                              "https://dev-rk3u8fpc.auth0.com/v2/logout?federated?returnTo=https://t4minty.herokuapp.com")
-                          }
+                          onClick={() => this.handleLogOut() }
                         >
                           Sign out
                         </button>
