@@ -3,7 +3,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp, faUserCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 
-const urlString = "https://t3minty-api.herokuapp.com";
+const urlString = "";
 
 class Articles extends Component{
     constructor(){
@@ -16,10 +16,7 @@ class Articles extends Component{
 
     componentDidMount(){
         // get articles on load
-        this.props.getArticlesFunc();
-
-
-        
+        this.props.getArticlesFunc();        
     }
 
 
