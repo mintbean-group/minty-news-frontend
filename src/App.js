@@ -4,7 +4,7 @@ import axios from "axios";
 import Articles from "./Articles";
 import "./App.css";
 
-const urlString = "";
+const urlString = "https://t3minty-api.herokuapp.com";
 
 class App extends Component {
   constructor() {
@@ -77,6 +77,7 @@ class App extends Component {
         <Header
           loggedIn={this.state.isLoggedIn}
           getArticlesFunc={this.getArticles}
+          userObject={this.state.user}
         />
         <Articles
           updateArticlesFunc={this.updateArticles}

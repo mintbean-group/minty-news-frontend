@@ -3,7 +3,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp, faUserCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 
-const urlString = "";
+const urlString = "https://t3minty-api.herokuapp.com";
 
 class Articles extends Component{
     constructor(){
@@ -15,14 +15,31 @@ class Articles extends Component{
     }
 
     componentDidMount(){
+        // get articles on load
         this.props.getArticlesFunc();
+
+
+        
     }
+
+
 
     // make function that handles the comments button
     handleComments = (e) =>{
         const commentSection = e.currentTarget.nextElementSibling;
 
         commentSection.classList.toggle('opened');
+
+        if(commentSection.classList.length === 3){
+            // listen for click to close comments
+            document.addEventListener('mousedown', (e) =>{
+
+                // console.log(e.target.classList);
+                if(!e.target.classList.contains('clickComment')){
+                    commentSection.classList.remove('opened');
+                } 
+            })
+        } 
     }
 
     // make function to grab the specific article
@@ -133,32 +150,30 @@ class Articles extends Component{
                                         <p className="likes">{article.likes}</p>
                                     </div>
                                     <div className="articleInfo">
-                                        <h2><a href={article.url} target="_blank">{article.title}</a></h2>
+                                        <h2><a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a></h2>
                                         <p className="description">{article.description}</p>
                                         <p className="date">{article.date}</p>
                                         {/* add button to show and hide the comments */}
-                                        <button className="showComments" onClick={(e)=>this.handleComments(e)}>{article.comments.length} comment(s)</button>
-                                        <div className="comments">
+                                        <button className="showComments clickComment" onClick={(e)=>this.handleComments(e)}>{article.comments.length} comment(s)</button>
+                                        <div className="comments clickComment">
                                             {/* check if the comments are empty, if they arent map through them and display */}
-                                            {article.comments.length === 0 ? <p className="noComment">No comments</p> : 
-                                            <ul className="commentContainer">
+                                            {article.comments.length === 0 ? <p className="noComment clickComment">No comments</p> : 
+                                            <ul className="commentContainer clickComment">
                                                 {article.comments.map((comment)=>{
                                                     return(
-                                                        <li key={comment._id} className="comment">
-                                                            {this.props.userObject.picture ? <img src={this.props.userObject.picture} alt={this.props.userObject.name}/> : 
-                                                            <FontAwesomeIcon icon={faUserCircle} />
-                                                            }
-                                                            <p>{comment.comment}</p>
+                                                        <li key={comment._id} className="clickComment comment">
+                                                            <FontAwesomeIcon icon={faUserCircle}  className="clickComment"/>
+                                                            <p className="clickComment">{comment.comment}</p>
                                                         </li>
                                                     )
                                                 })}
                                             </ul>
                                             }
                                             {/* form for new comments */}
-                                            <div className="newComment">
-                                                <label htmlFor="newComment" className="sr-only">Please enter a comment</label>
-                                                <input onChange={this.handleUserComment} type="text" name="newComment" id="newComment"/>
-                                                <button onClick={()=>this.handleNewComment(article._id)}><FontAwesomeIcon icon={faPlus} /></button>
+                                            <div className="newComment clickComment">
+                                                <label htmlFor={article._id} className="sr-only clickComment">Please enter a comment</label>
+                                                <input onChange={this.handleUserComment} type="text" name="newComment" id={article._id} className="clickComment" />
+                                                <button onClick={()=>this.handleNewComment(article._id)} className="clickComment"><FontAwesomeIcon icon={faPlus} className="clickComment"/></button>
                                             </div>
                                         </div>
                                     </div>
