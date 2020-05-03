@@ -105,6 +105,10 @@ class Header extends Component {
           },
         }).then((response) => {
           this.props.getArticlesFunc();
+        }).catch((error) => {
+            if (typeof error.response === "undefined") {
+              window.location = "https://t4minty.herokuapp.com/login";
+            }
         });
 
 
