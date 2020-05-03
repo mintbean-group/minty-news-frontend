@@ -4,7 +4,7 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const urlString = "https://t3minty-api.herokuapp.com";
+const urlString = "";
 
 class Header extends Component {
 
@@ -105,6 +105,10 @@ class Header extends Component {
           },
         }).then((response) => {
           this.props.getArticlesFunc();
+        }).catch((error) => {
+            if (typeof error.response === "undefined") {
+              window.location = "https://t4minty.herokuapp.com/login";
+            }
         });
 
 

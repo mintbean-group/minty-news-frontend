@@ -3,7 +3,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp, faUserCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 
-const urlString = "https://t3minty-api.herokuapp.com";
+const urlString = "";
 
 class Articles extends Component{
     constructor(){
@@ -56,22 +56,25 @@ class Articles extends Component{
         document.getElementById('newComment').value = '';
 
         axios({
-            url: `${urlString}/comment`,
-            method: 'POST',
-            responseType: 'json',
-            data: newComment,
+          url: `${urlString}/comment`,
+          method: "POST",
+          responseType: "json",
+          data: newComment,
         })
-        .then((response) => {
+          .then((response) => {
             newComment.id = response.data.id;
 
             // push article to array
             article.comments.push(newComment.id);
-    
+
             // update the api
             this.props.updateArticlesFunc(article);
-
-        })
-                
+          })
+          .catch((error) => {
+            if (typeof error.response === "undefined") {
+              window.location = "https://t4minty.herokuapp.com/login";
+            }
+          });                
     }
     
     // make function that handles the likes
