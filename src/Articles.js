@@ -132,6 +132,27 @@ class Articles extends Component{
 
     }
 
+
+    // make function that converts the url
+    handleUrl = (url) =>{
+        let hostname;
+        //find & remove protocol (http, ftp, etc.) and get hostname
+    
+        if (url.indexOf("//") > -1) {
+            hostname = url.split('/')[2];
+        }
+        else {
+            hostname = url.split('/')[0];
+        }
+    
+        //find & remove port number
+        hostname = hostname.split(':')[0];
+        //find & remove "?"
+        hostname = hostname.split('?')[0];
+    
+        return hostname;
+    }
+
     render(){
 
         // console.log(this.props.articleData);
@@ -150,7 +171,10 @@ class Articles extends Component{
                                         <p className="likes">{article.likes}</p>
                                     </div>
                                     <div className="articleInfo">
-                                        <h2><a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a></h2>
+                                        <div className="linkHeading">
+                                            <h2><a href={article.url} target="_blank" rel="noopener noreferrer">{article.title}</a></h2>
+                                            <p><a href={article.url} target='_blank' rel="noopener noreferrer">({this.handleUrl(article.url)})</a></p>
+                                        </div>
                                         <p className="description">{article.description}</p>
                                         <p className="date">{article.date}</p>
                                         {/* add button to show and hide the comments */}
