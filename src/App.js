@@ -17,6 +17,10 @@ class App extends Component {
     };
   }
 
+  componentDidMount = () =>  {
+    console.log("component mounted");
+  }
+
   // make function to update articles
   updateArticles = (article) => {
     axios({
