@@ -133,7 +133,7 @@ class Articles extends Component{
                                         <p className="likes">{article.likes}</p>
                                     </div>
                                     <div className="articleInfo">
-                                        <h2><a href={article.url}>{article.title}</a></h2>
+                                        <h2><a href={article.url} target="_blank">{article.title}</a></h2>
                                         <p className="description">{article.description}</p>
                                         <p className="date">{article.date}</p>
                                         {/* add button to show and hide the comments */}
