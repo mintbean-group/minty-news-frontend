@@ -3,6 +3,7 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp, faUserCircle, faPlus } from '@fortawesome/free-solid-svg-icons';
 
+const urlString = "";
 
 class Articles extends Component{
     constructor(){
@@ -55,7 +56,7 @@ class Articles extends Component{
         document.getElementById('newComment').value = '';
 
         axios({
-            url: `https://t3minty-api.herokuapp.com/comment`,
+            url: `${urlString}/comment`,
             method: 'POST',
             responseType: 'json',
             data: newComment,
@@ -70,9 +71,7 @@ class Articles extends Component{
             this.props.updateArticlesFunc(article);
 
         })
-        
-
-        
+                
     }
     
     // make function that handles the likes
