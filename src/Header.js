@@ -4,7 +4,7 @@ import "./App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const urlString = "https://t3minty-api.herokuapp.com";
+const urlString = "";
 
 class Header extends Component {
   constructor() {
@@ -72,6 +72,11 @@ class Header extends Component {
     });
   };
 
+  // on lgout, redirects to Auth0 logout route
+  handleLogout = () => {
+     window.location = "https://t4minty.herokuapp.com/logout";
+  };
+
   // on submit, post to the API and close the window
   handlePost = (e) => {
     // prevent default of the post
@@ -111,11 +116,6 @@ class Header extends Component {
     this.handleOpenPost(false);
   };
 
-  handleLogout = () => {
-    window.location =
-      "https://dev-rk3u8fpc.auth0.com/v2/logout?federated?returnTo=https://t4minty.herokuapp.com";
-  };
-
   render() {
     return (
       <header>
@@ -129,10 +129,9 @@ class Header extends Component {
                   className="newPostButton"
                   onClick={() =>
                     this.props.loggedIn
-                      ? (window.location =
-                          "https://t4minty.herokuapp.com/login")
-                      : this.handleOpenPost(true)
-                  }
+                      ? this.handleOpenPost(true)
+                      : (window.location =
+                          "https://t4minty.herokuapp.com/login")}
                 >
                   + New post
                 </button>
@@ -149,10 +148,7 @@ class Header extends Component {
                   </div>
 
                   <li>
-                    <button
-                      className="loginButton"
-                      onClick={() => this.handleLogOut()}
-                    >
+                    <button className="loginButton" onClick={this.handleLogout}>
                       Sign out
                     </button>
                   </li>

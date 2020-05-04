@@ -4,7 +4,7 @@ import axios from "axios";
 import Articles from "./Articles";
 import "./App.css";
 
-const urlString = "https://t3minty-api.herokuapp.com";
+const urlString = "";
 
 class App extends Component {
   constructor() {
@@ -23,9 +23,6 @@ class App extends Component {
       method: "GET",
       responseType: "json",
     }).then((response) => {
-      console.log("component mounted");
-      console.log("user", response.data.user);
-      console.log("loggedIN?", response.data.status);
 
       this.setState(
         {
@@ -79,6 +76,7 @@ class App extends Component {
           userObject={this.state.user}
         />
         <Articles
+          loggedIn={this.state.isLoggedIn}
           updateArticlesFunc={this.updateArticles}
           getArticlesFunc={this.getArticles}
           articleData={this.state.articles}
