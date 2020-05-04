@@ -204,7 +204,7 @@ class Articles extends Component {
                                   {comment.comment}
                                 </p>
                                 {this.props.loggedIn ? (
-                                  <p className="commentUser">
+                                  <p className="clickComment">
                                     {comment.user.name}
                                   </p>
                                 ) : (
