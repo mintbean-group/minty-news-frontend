@@ -13,9 +13,7 @@ class Footer extends Component {
               <a href="https://www.youtube.com/channel/UCg8dJs-WeArbtwjp1kpFaXw/">
                 Take a Tour
               </a>
-              <a href="https://github.com/mintbean-group/Merge">
-                View the Code
-              </a>
+              <a href="https://github.com/mintbean-group">View the Code</a>
             </div>
           </div>
           <div className="mintyCreators">
