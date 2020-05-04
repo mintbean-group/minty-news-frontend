@@ -466,9 +466,16 @@ main{
   padding: 0 10px;
   margin-bottom: 20px;
 }
+
 /* user avatar */
 
+.userContainer {
+  height: 30px;
+}
 
+.userContainer img {
+  object-fit: contain;
+}
 
 
 
