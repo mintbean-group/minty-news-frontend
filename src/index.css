@@ -446,7 +446,7 @@ main{
 .newComment input{
   height: 35px;
   padding: 10px;
-  /* width: 90%; */
+  width: 90%;
   border: 0.5px solid rgb(107, 107, 107);
 }
 
@@ -480,6 +480,7 @@ main{
   object-fit: contain;
   width: 100%;
   display: block;
+  border-radius: 50%;
 }
 
 
