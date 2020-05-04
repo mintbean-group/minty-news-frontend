@@ -1,64 +1,278 @@
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Open+Sans&display=swap");
 
 /* setup begins */
-html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+figcaption,
+figure,
+main {
+  display: block;
+}
+figure {
+  margin: 1em 40px;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+b,
+strong {
+  font-weight: inherit;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+audio,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+img {
+  border-style: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+textarea {
+  overflow: auto;
+}
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+details,
+menu {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+canvas {
+  display: inline-block;
+}
+template {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
 
-.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0;
+}
 
-html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+html {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-*, *:before, *:after {box-sizing: inherit}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
-.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 /* SETUP ENDS */
 
 /* OVERALL STYLES */
 
 *,
-h1{
+h1 {
   margin: 0;
   padding: 0;
 }
 
 /* change the base font to use rems*/
-html{
+html {
   font-size: 62.5%;
 }
 
 /* remove the list items */
-ul{
+ul {
   list-style-type: none;
 }
 
 /* remove default colour of a */
-a{
+a {
   color: inherit;
   text-decoration: none;
 }
 
 /* remove resize on the textarea */
-textarea{
+textarea {
   resize: none;
 }
 
 /* add default button styles */
 button:hover,
-button:focus{
+button:focus {
   cursor: pointer;
 }
 
 /* wrapper styles */
-.wrapper{
+.wrapper {
   max-width: 1200px;
   width: 70%;
   margin: 0 auto;
 }
 
 /* body styles */
-body{
+body {
   font-size: 1.6rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 1.5;
 }
 
@@ -68,27 +282,31 @@ h2,
 h3,
 button,
 .profile p,
-.linkHeading p a{
-  font-family: 'Didact Gothic', sans-serif;
+.linkHeading p a {
+  font-family: "Didact Gothic", sans-serif;
   letter-spacing: 0.1rem;
 }
 
 /* heading heirarchy */
-h1{
+h1 {
   font-size: 2.4rem;
 }
-
 
 /* HEADER STYLES */
 
 /* overall header styles */
-header{
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(150, 240, 183) 0%, rgb(118, 236, 246) 100%);
+header {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgb(150, 240, 183) 0%,
+    rgb(118, 236, 246) 100%
+  );
   padding: 20px 0;
 }
 
 /* flex the content */
-header .wrapper{
+header .wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -96,7 +314,7 @@ header .wrapper{
 }
 
 /* flex the nav links */
-header ul{
+header ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -104,24 +322,23 @@ header ul{
 }
 
 /* add spacing between them */
-header li{
+header li {
   margin: 0 20px;
 }
 
 /* style the buttons in the nav */
-header button{
+header button {
   background: transparent;
 }
 
 /* when signed in flex the extra div */
-div.signIn{
+div.signIn {
   display: flex;
   flex-direction: row;
-
 }
 
 /* profile styles */
-.profile{
+.profile {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -130,16 +347,16 @@ div.signIn{
 }
 
 /* profile icon */
-.profile img{
+.profile img {
   max-width: 40px;
   max-height: 40px;
   border-radius: 50%;
   margin-right: 10px;
-  object-fit:contain;
+  object-fit: contain;
 }
 
 /* new post button */
-header .newPostButton{
+header .newPostButton {
   border: none;
   padding: 10px;
   transition: all 0.5s ease;
@@ -147,13 +364,13 @@ header .newPostButton{
 
 /* hover effects */
 header .newPostButton:hover,
-header .newPostButton:focus{
+header .newPostButton:focus {
   transform: scale(1.1);
 }
 
 /* button styles */
 header .loginButton,
-.moduleContent button.submit{
+.moduleContent button.submit {
   padding: 10px 20px;
   border: 1px solid black;
   border-radius: 20px;
@@ -166,13 +383,13 @@ header .loginButton:focus,
 .moduleContent button.submit:hover,
 .moduleContent button.submit:focus,
 .newComment button:hover,
-.newComment button:focus{
+.newComment button:focus {
   background-color: black;
-  color: rgb(23, 207, 152);;
+  color: rgb(23, 207, 152);
 }
 
 /* module styles */
-.moduleContainer{
+.moduleContainer {
   position: fixed;
   z-index: 800;
   top: 0;
@@ -183,7 +400,7 @@ header .loginButton:focus,
 }
 
 /* module content styles */
-.moduleContent{
+.moduleContent {
   position: relative;
   top: 15%;
   left: 0;
@@ -197,7 +414,7 @@ header .loginButton:focus,
 }
 
 /* close icon */
-.closeModule{
+.closeModule {
   position: absolute;
   border: none;
   top: 15px;
@@ -209,56 +426,56 @@ header .loginButton:focus,
 
 /* hover styles for close icon */
 .closeModule:hover,
-.closeModule:focus{
+.closeModule:focus {
   color: rgb(23, 207, 152);
 }
 
 /* h3 styles */
-.moduleContent h3{
+.moduleContent h3 {
   font-size: 3rem;
   margin-bottom: 20px;
   color: rgb(23, 207, 152);
 }
 
 /* label styles */
-.moduleContent label{
+.moduleContent label {
   margin: 5px 0;
 }
 
 /* input styles */
-.moduleContent input{
+.moduleContent input {
   margin-bottom: 10px;
   height: 35px;
   border: 0.5px solid rgb(107, 107, 107);
 }
 
 /* text area styles */
-.moduleContent textarea{
+.moduleContent textarea {
   border: 0.5px solid rgb(107, 107, 107);
   height: 150px;
 }
 
 /* add spaces to create room for typed text */
-.moduleContent input, 
-textarea{
+.moduleContent input,
+textarea {
   padding: 10px;
 }
 
 /* add focus styles */
-.moduleContent input:focus, 
+.moduleContent input:focus,
 textarea:focus,
-.newComment input:focus{
+.newComment input:focus {
   border-color: rgb(16, 190, 138);
 }
 
 /* styles for the submit buttons in modules */
-.moduleContent button.submit{
+.moduleContent button.submit {
   align-self: center;
   margin-top: 30px;
 }
 
 /* new post form styles */
-.moduleContent form{
+.moduleContent form {
   display: flex;
   flex-direction: column;
 }
@@ -270,24 +487,22 @@ textarea:focus,
   position: absolute;
   right: 10%;
   color: black;
-  transition: all 0.5s
+  transition: all 0.5s;
 }
 
 .moduleContent .exitNewPost:hover,
 .moduleContent .exitNewPost:focus {
-  color:rgb(118, 236, 246);
+  color: rgb(118, 236, 246);
 }
 
-
 /*      ARTICLES  */
-main{
+main {
   z-index: 1;
   position: relative;
 }
 
-
 /* basic article styles */
-.article{
+.article {
   margin: 10px 0;
   padding: 10px 0 20px;
   border-bottom: 0.5px solid rgb(16, 190, 138);
@@ -298,12 +513,12 @@ main{
 }
 
 /* no border on last one */
-.article:last-of-type{
+.article:last-of-type {
   border-bottom: none;
 }
 
 /* the likes styles */
-.likesSection{
+.likesSection {
   margin-right: 30px;
   display: flex;
   flex-direction: column;
@@ -311,7 +526,7 @@ main{
 }
 
 /* the likes button */
-.likesSection button{
+.likesSection button {
   border: none;
   font-size: 2rem;
   padding: 5px;
@@ -319,62 +534,62 @@ main{
 }
 
 /* like button when clicked */
-.likesSection button.liked{
+.likesSection button.liked {
   color: rgb(16, 190, 138);
 }
 
 /* likes numbers */
-.likesSection p{
+.likesSection p {
   color: rgb(168, 168, 168);
   font-size: 1.4rem;
 }
 
 /* make article info relative */
-.articleInfo{
+.articleInfo {
   position: relative;
 }
 
 /* article info headings styles */
-.articleInfo .linkHeading{
+.articleInfo .linkHeading {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-@media (max-width:750px) {
-  .articleInfo .linkHeading{
+@media (max-width: 750px) {
+  .articleInfo .linkHeading {
     flex-direction: column;
   }
 }
 
 /* external link */
-.linkHeading p a{
+.linkHeading p a {
   font-size: 1.4rem;
   color: rgb(168, 168, 168);
 }
 
 /* hover and focus styles */
 .linkHeading p a:hover,
-.linkHeading p a:focus{
+.linkHeading p a:focus {
   text-decoration: underline;
 }
 
 /* article info styles */
-.articleInfo h2{
+.articleInfo h2 {
   color: rgb(16, 190, 138);
   text-transform: capitalize;
-  font-size: 2rem; 
+  font-size: 2rem;
   margin-right: 10px;
 }
 
 /* addspacing for description */
-.articleInfo .description{
+.articleInfo .description {
   margin: 10px 0;
   color: rgb(109, 109, 109);
 }
 
 /* show comments button */
-.articleInfo .showComments{
+.articleInfo .showComments {
   border: none;
   background-color: transparent;
   font-size: 1.4rem;
@@ -383,12 +598,12 @@ main{
 
 /* show comments button */
 .articleInfo .showComments:hover,
-.articleInfo .showComments:focus{
+.articleInfo .showComments:focus {
   text-decoration: underline;
 }
 
 /* comments styles */
-.comments{
+.comments {
   display: none;
   position: absolute;
   background-color: #fff;
@@ -399,15 +614,13 @@ main{
   border-radius: 10px;
 }
 
-
-
 /* show the comments when opened */
-.comments.opened{
+.comments.opened {
   display: block;
 }
 
 /* comments styles */
-.comment{
+.comment {
   display: flex;
   width: 95%;
   margin: 0 auto;
@@ -417,14 +630,13 @@ main{
   border-bottom: 0.5px solid rgb(202, 200, 200);
 }
 
-
 /* remove the bottom from the border */
-.comment:last-of-type{
+.comment:last-of-type {
   border-bottom: none;
 }
 
 /* profile icon */
-.comment svg{
+.comment svg {
   font-size: 2rem;
   color: rgba(73, 214, 172, 0.548);
   margin-right: 20px;
@@ -433,7 +645,7 @@ main{
 /* the new comment section */
 
 /* form styles */
-.newComment{
+.newComment {
   display: flex;
   flex-direction: row;
   padding: 0 10px;
@@ -443,7 +655,7 @@ main{
 }
 
 /* input styles */
-.newComment input{
+.newComment input {
   height: 35px;
   padding: 10px;
   width: 90%;
@@ -451,7 +663,7 @@ main{
 }
 
 /* add comment button */
-.newComment button{
+.newComment button {
   border: none;
   background-color: transparent;
   width: 35px;
@@ -462,7 +674,7 @@ main{
 }
 
 /* no comment p */
-.comments .noComment{
+.comments .noComment {
   padding: 0 10px;
   margin-bottom: 20px;
 }
@@ -473,7 +685,6 @@ main{
   min-width: 60px;
   max-width: 60px;
   padding: 10px;
-
 }
 
 .userContainer img {
@@ -483,12 +694,44 @@ main{
   border-radius: 50%;
 }
 
+footer {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgb(150, 240, 183) 0%,
+    rgb(118, 236, 246) 100%
+  );
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-top: 10px;
+}
 
+footer .wrapper {
+  font-size: 1rem;
+  display: flex;
+}
 
+.mintyCreators {
+  width: 65%;
+}
+.mintyLinks {
+  width: 35%;
+}
+.mintyLinks div {
+  display: flex;
+  flex-direction: column;
+}
 
+.mintyTeams {
+  display: flex;
+  justify-content: space-between;
+}
 
-
-
-
-
-
+.mintyTeams div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}

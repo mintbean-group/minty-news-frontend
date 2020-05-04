@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import axios from "axios";
 import Articles from "./Articles";
+import Footer from "./Footer";
 import "./App.css";
 
 const urlString = "";
@@ -82,6 +83,7 @@ class App extends Component {
           articleData={this.state.articles}
           userObject={this.state.user}
         />
+        <Footer></Footer>
       </div>
     );
   }
