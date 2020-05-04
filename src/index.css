@@ -704,11 +704,11 @@ footer {
   );
   height: 80px;
   width: 100%;
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
-  left: 0;
+  left: 0; */
   padding-top: 10px;
-  z-index: 500;
+  /* z-index: 500; */
 }
 
 footer .wrapper {
