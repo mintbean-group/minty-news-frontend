@@ -609,7 +609,7 @@ main {
   position: absolute;
   background-color: #fff;
   width: 600px;
-  z-index: 10;
+  z-index: 600;
   padding: 30px 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.171);
   border-radius: 10px;
