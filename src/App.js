@@ -28,7 +28,9 @@ class App extends Component {
     }).then((response) => {
 
       if (response.data.created) {
-        console.log(response.data.created);
+        console.log("it ran addUser");
+      } else {
+        console.log("it did not run addUser");
       }
 
       this.setState(
