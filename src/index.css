@@ -470,8 +470,8 @@ main{
 /* user avatar */
 
 .userContainer {
-  min-width: 50px;
-  max-width: 50px;
+  min-width: 60px;
+  max-width: 60px;
   padding: 10px;
 
 }
