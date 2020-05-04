@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -192,25 +192,29 @@ class Articles extends Component {
                         <ul className="commentContainer clickComment">
                           {article.comments.map((comment) => {
                             return (
-                              <li
-                                key={comment._id}
-                                className="clickComment comment"
-                              >
-                                <FontAwesomeIcon
-                                  icon={faUserCircle}
-                                  className="clickComment"
-                                />
-                                <p className="clickComment">
-                                  {comment.comment}
-                                </p>
+                              <Fragment>
+                                <li
+                                  key={comment._id}
+                                  className="clickComment comment"
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faUserCircle}
+                                    className="clickComment"
+                                  />
+                                  <p className="clickComment">
+                                    {comment.comment}
+                                  </p>
+                                </li>
                                 {this.props.loggedIn ? (
-                                  <div className="clickComment">
-                                    posted by: {comment.user.name}
-                                  </div>
+                                  <li>
+                                    <div className="clickComment user">
+                                      posted by: {comment.user.name}
+                                    </div>
+                                  </li>
                                 ) : (
                                   ""
                                 )}
-                              </li>
+                              </Fragment>
                             );
                           })}
                         </ul>
