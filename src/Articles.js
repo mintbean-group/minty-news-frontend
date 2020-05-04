@@ -197,23 +197,24 @@ class Articles extends Component {
                                   key={comment._id}
                                   className="clickComment comment"
                                 >
-                                  <FontAwesomeIcon
-                                    icon={faUserCircle}
-                                    className="clickComment"
-                                  />
+                                  {this.props.loggedIn ? (
+                                    <div className="clickComment userContainer">
+                                      <img
+                                        className="clickComment commentUser"
+                                        src={comment.user.picture}
+                                      ></img>
+                                    </div>
+                                  ) : (
+                                    <FontAwesomeIcon
+                                      icon={faUserCircle}
+                                      className="clickComment"
+                                    />
+                                  )}
+
                                   <p className="clickComment">
                                     {comment.comment}
                                   </p>
                                 </li>
-                                {this.props.loggedIn ? (
-                                  <li>
-                                    <div className="clickComment user">
-                                      posted by: {comment.user.name}
-                                    </div>
-                                  </li>
-                                ) : (
-                                  ""
-                                )}
                               </Fragment>
                             );
                           })}

@@ -394,24 +394,12 @@ main{
   background-color: #fff;
   width: 600px;
   z-index: 10;
-  /* bottom: -350px; */
   padding: 30px 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.171);
   border-radius: 10px;
 }
-/* 
-.comments::before{
-  content:"";
-    position: absolute;
-    left: 10px;
-    top: -15px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 20px 20px 20px;
-    border-color: transparent transparent white transparent;
-    z-index:10;
-} */
+
+
 
 /* show the comments when opened */
 .comments.opened{
@@ -478,6 +466,11 @@ main{
   padding: 0 10px;
   margin-bottom: 20px;
 }
+/* user avatar */
+
+
+
+
 
 
 
