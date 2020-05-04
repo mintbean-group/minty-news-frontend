@@ -1,68 +1,84 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## MINTY NEWS
 
-## Available Scripts
+![GitHub Logo](https://github.com/mintbean-group/Merge/blob/master/images/mintyFresh.PNG)
 
-In the project directory, you can run:
 
-### `npm start`
+<h2> Minty News is Deployed at:  https://t4minty.herokuapp.com/ </h2>
+<h2> Front End Repo:  https://github.com/mintbean-group/minty-news-frontend </h2>
+<h2> Back End Repo:  https://github.com/mintbean-group/minty-news-backend </h2>
+<h2> Mintbean:  https://www.mintbean.io/ </h2>
+<h2> YouTube:  https://www.youtube.com/channel/UCg8dJs-WeArbtwjp1kpFaXw/ </h2>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Contributors 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<h3> Front End Team </h3>
+<h4> Key Evans-Stocks - https://www.kaystocks.com/ </h4>
+<h4> Jim Wang - https://kneestoosharp.com/ </h4>
 
-### `npm test`
+<h3> Back End Team </h3>
+<h4> Ania Pienio - https://aniapienio.com/ </h4>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<h3>Your Turn: Contribute to This Project</h3>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h4>Quick Note: Before you Start</h4>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+> This guide requires that you have Node.js and MongoDB correctly installed on your system.  If you cannot execute the commands: `npm --version` or `mongorestore --version`, please [Install NodeJS](https://nodejs.org/) and/or [MongoDB](https://www.mongodb.com/) (See: the [Official Install Guide](https://docs.mongodb.com/manual/administration/install-community/) for detailed instructions).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once you have cloned the repository, open it in Visual Studio Code and issue the command "npm install" from the integrated terminal.  This will look at the package.json file and add the required dependant modules.
 
-### `npm run eject`
+If you open the "server.js" file, you will notice that the top 2 lines define the constants "mongoDBConnectionString" and "HTTP_PORT".  The HTTP_PORT is fine the way it is (unless you have a conflict on your local machine with this port), however the mongoDBConnectionString value will need to change. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Once you aquire the connection string, set it as a secret variable in a .env file that you will create yourself.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The components used required Material UI's main packages, which are:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    require("dotenv").config();
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The string will load to replace your mongoDBConnectionString as soon as the process enviornment is accessed. 
 
-## Learn More
+   MONGODB_CONNECTION_STRING="your string from mongoDB"
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ Don't forget to put the .env file in your .gitignore otherwise it will be publicly visible, and also to configure an enviornment variable at your server's host. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## FRONT END
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+The front end portion was created in React on Node.js using npx create-react-app.  Using build scripts, the frontend portion was compressed and then moved into the public folder of the application.  The back end portion serves the front by exposing the public folder as the root route as follows: 
 
-### Analyzing the Bundle Size
+    app.use(express.static("public"));
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+The calls to the backend portion are made via axios. 
 
-### Making a Progressive Web App
+## BACK END 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+The back end portion was created with Express on Node.js. The persistence storage is facilitated by MongoDB and accessed through the Mongoose ORM.  Authorization for the application's front end is done through a thrid-party openId provider, Auth0.
 
-### Advanced Configuration
+## FUNCTIONALITY
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+#### General Experience: 
 
-### Deployment
+* ability to view articles
+* ability to visit article links
+* ability to view the amount of likes for each article 
+* ability to view comments (not the creator of the comments)
+* ability to register via an openId provider (Google) or user specified credentials
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
+#### Authenticated Experiece 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* ability to view articles
+* ability to visit article links
+* ability to view the amount of like for each article
+* ability to upvote article
+* ability to downvote article
+* ability to view comments 
+* ability to view the creator of the comment
+* ability to view hello message with a user-specific image avatar 
+* ability to login via an openId provider (Google) or user specified credentials
+* ability to log out 
+
+
+## REST API AVAILABLE
+The is a stand alone API that serves the collections on Minty Fresh should you wish to build your own front-end application:
+Deployed at: https://t3minty-api.herokuapp.com/  and accepts all requests via for example fetch or axios.  Contact one of the team for the endpoint documentation by emailing one of us: mintyfreshdevs@gmail.com
