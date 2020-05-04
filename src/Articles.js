@@ -202,6 +202,7 @@ class Articles extends Component {
                                       <img
                                         className="clickComment commentUser"
                                         src={comment.user.picture}
+                                        alt={comment.user.name}
                                       ></img>
                                     </div>
                                   ) : (
