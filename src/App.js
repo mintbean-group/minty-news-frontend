@@ -77,6 +77,7 @@ class App extends Component {
           userObject={this.state.user}
         />
         <Articles
+          loggedIn={this.state.isLoggedIn}
           updateArticlesFunc={this.updateArticles}
           getArticlesFunc={this.getArticles}
           articleData={this.state.articles}
