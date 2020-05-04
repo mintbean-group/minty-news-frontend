@@ -13,10 +13,7 @@ class App extends Component {
     this.state = {
       isLoggedIn: false,
       articles: [],
-      user: {
-        name: 'Kay',
-        picture: 'https://lh3.googleusercontent.com/a-/AOh14GinaUIVVR9aQc6qz8Mg1Sl7wFeDMnJTzBzDDrtLjg'
-      },
+      user: {},
     };
   }
 
