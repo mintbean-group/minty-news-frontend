@@ -24,12 +24,6 @@ class App extends Component {
       responseType: "json",
     }).then((response) => {
 
-      if (response.data.created) {
-        console.log("it ran addUser");
-      } else {
-        console.log("it did not run addUser");
-      }
-
       this.setState(
         {
           isLoggedIn: response.data.status,

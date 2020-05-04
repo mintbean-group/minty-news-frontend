@@ -63,8 +63,9 @@ class Articles extends Component{
 
         // make comment object
         const newComment = {
-            comment: this.state.userComment,
-        }
+          comment: this.state.userComment,
+          tempUser: this.props.userObject.email,
+        };
 
         document.getElementById(id).value = '';
 
